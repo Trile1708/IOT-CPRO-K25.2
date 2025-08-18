@@ -1,0 +1,8 @@
+[2025-08-12 12:03:17] [INFO] [App/main.c:13] - Application started successfully.
+[2025-08-12 12:03:17] [WARNING] [App/main.c:14] - Low disk space detected.
+[2025-08-12 12:03:17] [ERROR] [App/main.c:15] - Failed to connect to database.
+[2025-08-12 12:03:17] [DEBUG] [App/main.c:19] - Now debug logs are visible
+[2025-08-13 11:19:15] [INFO] [App/main.c:13] - Application started successfully.
+[2025-08-13 11:19:15] [WARNING] [App/main.c:14] - Low disk space detected.
+[2025-08-13 11:19:15] [ERROR] [App/main.c:15] - Failed to connect to database.
+[2025-08-13 11:19:15] [DEBUG] [App/main.c:19] - Now debug logs are visible
