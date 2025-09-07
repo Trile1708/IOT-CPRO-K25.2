@@ -15,26 +15,26 @@ APP_DIR = App
 BUILD_DIR = build
 
 # Cờ biên dịch và liên kết
-CC = gcc
+CC = g++
 # Tự động tạo cờ -I cho các component
 COMPONENT_INCLUDE_PATHS = $(foreach comp,$(COMPONENTS),-I$(SRC_DIR)/$(comp))
 CFLAGS = -Wall -I$(SRC_DIR)/$(APP_DIR) $(COMPONENT_INCLUDE_PATHS)
 LDFLAGS =
 
-# Tìm tất cả các file .c trong các thư mục component và thư mục App
-COMPONENT_SRC = $(foreach comp,$(COMPONENTS),$(wildcard $(SRC_DIR)/$(comp)/*.c))
-APP_SRC = $(wildcard $(SRC_DIR)/$(APP_DIR)/*.c)
+# Tìm tất cả các file .cpp trong các thư mục component và thư mục App
+COMPONENT_SRC = $(foreach comp,$(COMPONENTS),$(wildcard $(SRC_DIR)/$(comp)/*.cpp))
+APP_SRC = $(wildcard $(SRC_DIR)/$(APP_DIR)/*.cpp)
 SRC_FILES = $(COMPONENT_SRC) $(APP_SRC)
 
 # Tạo danh sách các file .o tương ứng
-OBJ_FILES = $(patsubst $(SRC_DIR)/%.c,$(BUILD_DIR)/%.o,$(SRC_FILES))
+OBJ_FILES = $(patsubst $(SRC_DIR)/%.cpp,$(BUILD_DIR)/%.o,$(SRC_FILES))
 
 # Mục tiêu mặc định
 .PHONY: all
 all: $(BUILD_DIR) $(BUILD_DIR)/$(TARGET)
 
-# Quy tắc biên dịch file .c thành file .o
-$(BUILD_DIR)/%.o: $(SRC_DIR)/%.c
+# Quy tắc biên dịch file .cpp thành file .o
+$(BUILD_DIR)/%.o: $(SRC_DIR)/%.cpp
 	@mkdir -p $(dir $@)
 	$(CC) $(CFLAGS) -c $< -o $@
 
